@@ -1,0 +1,48 @@
+{
+  "" : {
+    "diagnostics" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeChecker-master.dia",
+    "emit-module-dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeChecker-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeChecker-master-emit-module.dia",
+    "swift-dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeChecker-master.swiftdeps"
+  },
+  "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/primeChecker/ContentView.swift" : {
+    "const-values" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/primeChecker/PrimeUtils.swift" : {
+    "const-values" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils.swiftconstvalues",
+    "dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils.d",
+    "diagnostics" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils.dia",
+    "index-unit-output-path" : "/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils.o",
+    "llvm-bc" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils.bc",
+    "object" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils.o",
+    "swift-dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils.swiftdeps",
+    "swiftmodule" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/PrimeUtils~partial.swiftmodule"
+  },
+  "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/primeChecker/primeCheckerApp.swift" : {
+    "const-values" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp.swiftconstvalues",
+    "dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp.d",
+    "diagnostics" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp.dia",
+    "index-unit-output-path" : "/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp.o",
+    "llvm-bc" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp.bc",
+    "object" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp.o",
+    "swift-dependencies" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp.swiftdeps",
+    "swiftmodule" : "/Users/vaibhav/Desktop/ios_sample_project/primeChecker/build/primeChecker.build/Debug-iphonesimulator/primeChecker.build/Objects-normal/arm64/primeCheckerApp~partial.swiftmodule"
+  }
+}

@@ -37,4 +37,4 @@ workflows:
           script: | 
             zipPath="ios/output/Build/Products/Debug-iphonesimulator/ios_app.zip"
             echo $APPETIZE_API_TOKEN
-            echo $(curl --http1.1 https://APPETIZE_API_TOKEN@api.appetize.io/v1/apps -F "file=@$zipPath" -F "platform=ios" -F "appPermissions.run=public")
+            echo $(curl --http1.1 https://$APPETIZE_API_TOKEN@api.appetize.io/v1/apps -F "file=@$zipPath" -F "platform=ios" -F "appPermissions.run=public")

@@ -16,12 +16,12 @@ workflows:
       - name: Build the .app
         script: | 
           xcodebuild build \
-            -project 'ios/Runner.xcodeproj' \
+            -project 'primeChecker.xcodeproj' \
             -scheme "primeChecker" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.2' \
             -configuration Debug \
-            -derivedDataPath ios/output
+            -derivedDataPath ios/output \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO

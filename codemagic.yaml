@@ -6,6 +6,8 @@ workflows:
     environment:
       xcode: 16.2
       cocoapods: default
+      groups:
+        - appetize_io_secrets
     scripts:
       - name: Install CocoaPods dependencies
         script: | 
@@ -14,15 +16,24 @@ workflows:
       - name: Build the .app
         script: | 
           xcodebuild build \
-            -project 'primeChecker.xcodeproj' \
+            -project 'ios/Runner.xcodeproj' \
             -scheme "primeChecker" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.2' \
             -configuration Debug \
+            -derivedDataPath ios/output
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO 
+            CODE_SIGNING_ALLOWED=NO
+      - name: Create a .zip archive
+        script: | 
+          cd ios/output/Build/Products/Debug-iphonesimulator
+          zip -r ios_app.zip primeChecker.app
     artifacts:
-      - /tmp/xcodebuild_logs/*.log
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+      - ios/output/Build/Products/Debug-iphonesimulator/*.zip
+    publishing:
+      scripts:
+        - name: Publish App to Appetize
+          script: | 
+            zipPath="ios/output/Build/Products/Debug-iphonesimulator/ios_app.zip"
+            echo $(curl --http1.1 https://APPETIZE_API_TOKEN@api.appetize.io/v1/apps -F "file=@$zipPath" -F "platform=ios" -F "appPermissions.run=public")

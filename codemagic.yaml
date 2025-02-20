@@ -19,7 +19,7 @@ workflows:
             -project 'primeChecker.xcodeproj' \
             -scheme "primeChecker" \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0' \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.2' \
             -configuration Debug \
             -derivedDataPath ios/output \
             CODE_SIGN_IDENTITY="" \

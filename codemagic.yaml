@@ -36,4 +36,6 @@ workflows:
         - name: Publish App to Appetize
           script: | 
             zipPath="ios/output/Build/Products/Debug-iphonesimulator/ios_app.zip"
-            echo $(curl --http1.1 https://$APPETIZE_API_TOKEN@api.appetize.io/v1/apps -F "file=@$zipPath" -F "platform=ios")
+            response=$(curl --http1.1 https://$APPETIZE_API_TOKEN@api.appetize.io/v1/apps -F "file=@$zipPath" -F "platform=ios")
+            publicKey=$(echo "$response" | jq -r '.publicKey')
+            echo $(curl -X POST "https://$AGENT_ENDPOINT" -H "Content-Type: application/json" -d "{\"command\": \"echo $publicKey > /projects/.data/appetize.key\",\"container\":\"dev\"}")

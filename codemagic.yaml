@@ -44,7 +44,7 @@ workflows:
           open primeChecker.xcworkspace && \
           xcodebuild test \
             -scheme primeChecker \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0' \
+            -destination "platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0" \
             -configuration Debug \
             -only-testing primeCheckerTests \
             -enableCodeCoverage NO \

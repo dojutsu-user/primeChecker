@@ -41,12 +41,13 @@ workflows:
           pod install
       - name: Run
         script: | 
+          open primeChecker.xcworkspace && \
           xcodebuild test \
             -scheme primeChecker \
             -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0' \
             -configuration Debug \
             -only-testing primeCheckerTests \
             -enableCodeCoverage NO \
-            -enablePerformanceTestsDiagnostics NO | Pods/xcbeautify/xcbeautify --report junit --report-path ."
+            -enablePerformanceTestsDiagnostics NO | Pods/xcbeautify/xcbeautify --report junit --report-path .
     artifacts:
       - junit.xml

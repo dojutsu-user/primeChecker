@@ -1,19 +1,16 @@
 workflows:
-  simulator-native-ios:
-    name: iOS simulator build
+  buildApp:
+    name: iOS Build
     max_build_duration: 120
     instance_type: mac_mini_m2
     environment:
       xcode: 16.0
       cocoapods: default
-      groups:
-        - appetize_io_secrets
     scripts:
-      - name: Install CocoaPods dependencies
+      - name: Install
         script: | 
-          # pod install
-          echo "test"
-      - name: Build the .app
+          pod install
+      - name: Run
         script: | 
           xcodebuild build \
             -project 'primeChecker.xcodeproj' \
@@ -31,11 +28,25 @@ workflows:
           zip -r ios_app.zip primeChecker.app
     artifacts:
       - ios/output/Build/Products/Debug-iphonesimulator/*.zip
-    publishing:
-      scripts:
-        - name: Publish App to Appetize
-          script: | 
-            zipPath="ios/output/Build/Products/Debug-iphonesimulator/ios_app.zip"
-            response=$(curl --http1.1 https://$APPETIZE_API_TOKEN@api.appetize.io/v1/apps -F "file=@$zipPath" -F "platform=ios")
-            publicKey=$(echo "$response" | jq -r '.publicKey')
-            echo $(curl -X POST "https://$AGENT_ENDPOINT" -H "Content-Type: application/json" -d "{\"command\": \"echo $publicKey > /projects/.data/appetize.key\",\"container\":\"dev\"}")
+  runTests:
+    name: iOS Test
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+    environment:
+      xcode: 16.0
+      cocoapods: default
+    scripts:
+      - name: Install
+        script: | 
+          pod install
+      - name: Run
+        script: | 
+          xcodebuild test \
+            -scheme primeChecker \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0' \
+            -configuration Debug \
+            -only-testing primeCheckerTests \
+            -enableCodeCoverage NO \
+            -enablePerformanceTestsDiagnostics NO | Pods/xcbeautify/xcbeautify --report junit --report-path ."
+    artifacts:
+      - junit.xml

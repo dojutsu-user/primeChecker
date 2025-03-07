@@ -41,9 +41,8 @@ workflows:
           pod install
       - name: Run
         script: | 
-          pkill -f Xcode && \
-          open primeChecker.xcworkspace && \
           xcodebuild test \
+            -workspace primeChecker.xcworkspace \
             -scheme primeChecker \
             -destination "platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0" \
             -configuration Debug \

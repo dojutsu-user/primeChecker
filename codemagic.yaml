@@ -13,7 +13,7 @@ workflows:
       - name: Run
         script: | 
           xcodebuild build \
-            -project 'primeChecker.xcodeproj' \
+            -workspace primeChecker.xcworkspace \
             -scheme "primeChecker" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0' \
@@ -25,7 +25,7 @@ workflows:
       - name: Create a .zip archive
         script: | 
           cd ios/output/Build/Products/Debug-iphonesimulator
-          zip -r ios_app.zip primeChecker.app
+          zip -r ios_app.zip *.app
     artifacts:
       - ios/output/Build/Products/Debug-iphonesimulator/*.zip
   runTests:
@@ -49,5 +49,8 @@ workflows:
             -only-testing primeCheckerTests \
             -enableCodeCoverage NO \
             -enablePerformanceTestsDiagnostics NO | Pods/xcbeautify/xcbeautify --report junit --report-path .
+      - name: Create a .zip archive
+        script: | 
+          zip junit.zip junit.xml
     artifacts:
-      - junit.xml
+      - junit.zip

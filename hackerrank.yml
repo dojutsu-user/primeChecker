@@ -1,0 +1,25 @@
+version: 1
+configuration:
+  has_webserver: true
+  readonly_paths:
+    - primeCheckerTests/*
+    - primeCheckerUITests/*
+    - codemagic.yml
+  ide_config:
+    default_open_files:
+      - primeChecker/ContentView.swift
+    project_menu:
+      run: xcodebuild build -workspace primeChecker.xcworkspace -scheme "primeChecker"
+        -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 16
+        Pro,OS=18.2' -configuration Debug -derivedDataPath ios/output
+        CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO | Pods/xcbeautify/xcbeautify
+      test: xcodebuild test -workspace primeChecker.xcworkspace -scheme primeChecker
+        -destination "platform=iOS Simulator,name=iPhone 16 Pro,OS=18.2"
+        -configuration Debug -only-testing primeCheckerTests -enableCodeCoverage
+        NO -enablePerformanceTestsDiagnostics NO | Pods/xcbeautify/xcbeautify
+        --report junit --report-path .
+      install: pod install
+  scoring:
+    command: echo "scored"
+    files:
+      - junit.xml

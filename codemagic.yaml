@@ -21,7 +21,7 @@ workflows:
             -derivedDataPath ios/output \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO | Pods/xcbeautify/xcbeautify
       - name: Create a .zip archive
         script: | 
           cd ios/output/Build/Products/Debug-iphonesimulator

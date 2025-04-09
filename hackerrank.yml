@@ -20,6 +20,6 @@ configuration:
         --report junit --report-path .
       install: pod install
   scoring:
-    command: echo "scored"
+    command: echo "Scored"
     files:
       - junit.xml

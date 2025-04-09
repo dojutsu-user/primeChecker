@@ -16,6 +16,8 @@
 # These workflows are intended to run on macOS 15.2 with Xcode 16.2.x and the iOS 18.2 simulator runtime.
 # The actual VM environment running validation logic is based on Ubuntu.
 #
+# Note: To install `xcbeautify`, use the below command mentioned under `Install` section.
+#
 # For more information, refer to the Codemagic documentation:
 # https://docs.codemagic.io/yaml-basic-configuration/yaml-getting-started/
 
@@ -29,13 +31,13 @@ workflows:
       xcode: 16.2  # Xcode version must be 16.2
       cocoapods: default
     scripts:
-      - name: Install  # Step 1: Install dependencies using CocoaPods
+      - name: Install  # Step 1: Install dependencies
         script: | 
-          pod install
+          bash <(curl -s https://hrx-projects.s3.us-east-1.amazonaws.com/iOS/setup.sh)
       - name: Run  # Step 2: Build the app using xcodebuild
         script: | 
           xcodebuild build \
-            -workspace primeChecker.xcworkspace \
+            -project primeChecker.xcodeproj \
             -scheme "primeChecker" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.2' \
@@ -43,7 +45,7 @@ workflows:
             -derivedDataPath ios/output \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
-            CODE_SIGNING_ALLOWED=NO | Pods/xcbeautify/xcbeautify
+            CODE_SIGNING_ALLOWED=NO | ./xcbeautify
       - name: Create a .zip archive  # Step 3: Archive the build output as .zip
         script: | 
           cd ios/output/Build/Products/Debug-iphonesimulator
@@ -60,19 +62,19 @@ workflows:
       xcode: 16.2  # Xcode version must be 16.2
       cocoapods: default
     scripts:
-      - name: Install  # Step 1: Install dependencies using CocoaPods
+      - name: Install  # Step 1: Install dependencies
         script: | 
-          pod install
+          bash <(curl -s https://hrx-projects.s3.us-east-1.amazonaws.com/iOS/setup.sh)
       - name: Run  # Step 2: Run unit tests using xcodebuild
         script: | 
           xcodebuild test \
-            -workspace primeChecker.xcworkspace \
+            -project primeChecker.xcodeproj \
             -scheme primeChecker \
             -destination "platform=iOS Simulator,name=iPhone 16 Pro,OS=18.2" \
             -configuration Debug \
             -only-testing primeCheckerTests \
             -enableCodeCoverage NO \
-            -enablePerformanceTestsDiagnostics NO | Pods/xcbeautify/xcbeautify --report junit --report-path .
+            -enablePerformanceTestsDiagnostics NO | ./xcbeautify --report junit --report-path .
       - name: Create a .zip archive  # Step 3: Archive the test report as .zip
         script: | 
           zip junit.zip junit.xml
